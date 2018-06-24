@@ -9,4 +9,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>EnRollServlet</display-name>
+    <servlet-name>EnRollServlet</servlet-name>
+    <servlet-class>servlet.EnRollServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EnRollServlet</servlet-name>
+    <url-pattern>/EnRollServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ImageServlet</display-name>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>servlet.ImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/ImageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
