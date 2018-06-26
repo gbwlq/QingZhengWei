@@ -1,10 +1,17 @@
 package dao;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import entity.User;
 
@@ -80,4 +87,77 @@ public class UserDao {
 		}
 		return flag;
 	}
+	//根据用户名查询用户名与密码
+	public User queryUserByNameAndPassWord(String userName) {
+		User user = null;
+		try {
+			Class.forName(DRIVER);
+			conn=DriverManager.getConnection(URL, USERNAME, PASSWORD);
+			String sql = "select userName,passWord from userInfo where userName =?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userName);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				String name = rs.getString(1);
+				String passWord = rs.getString(2);
+				
+				
+				user = new User(userName, passWord);
+			}
+			return user;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return user;
+	}
+	//myBatis
+	//查询用户
+/*	public User queryUserByName(String userName){
+		String resource = "conf.xml";
+		User user = null;
+		try {
+			Reader reader = Resources.getResourceAsReader(resource);
+			SqlSessionFactory sessionFactory =new SqlSessionFactoryBuilder().build(reader);
+			SqlSession session = sessionFactory.openSession();
+			String statement = "entity.userMapper"+".queryUserByName";
+			user = session.selectOne(statement, userName);
+			session.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return user;
+	}
+	//判断用户是否存在
+	public boolean isExistByName(String userName) {
+		if (queryUserByName(userName) == null) {
+			return false;
+		} else {
+			return true;
+		}
+	}	
+	//增加用户
+	public boolean addUser(User user) {
+		String resource = "conf.xml";
+		boolean flag = true;
+		try {
+			Reader reader = Resources.getResourceAsReader(resource);
+			SqlSessionFactory sessionFactory =new SqlSessionFactoryBuilder().build(reader);
+			SqlSession session = sessionFactory.openSession();
+			String statement = "entity.userMapper"+".addUser";
+			User user1 = new User(user.getUserName(),user.getPassWord(),user.getEmail());
+			session.insert(statement, user1);
+			session.commit();
+			session.close();
+			return flag;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+	}*/
 }

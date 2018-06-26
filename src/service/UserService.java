@@ -12,6 +12,9 @@ public class UserService {
 	//添加用户
 	public boolean addUser(User user) {
 		return dao.addUser(user);
-		
+	}
+	//根据用户名查询用户名与密码
+	public User queryUserByNameAndPassWord(String userName) {
+		return dao.queryUserByNameAndPassWord(userName);
 	}
 }

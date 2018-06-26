@@ -32,6 +32,11 @@ public class User {
 		this.passWord = passWord;
 		this.email = email;
 	}
+	public User(String userName, String passWord) {
+		super();
+		this.userName = userName;
+		this.passWord = passWord;
+	}
 	@Override
 	public String toString() {
 		return "User [userName=" + userName + ", passWord=" + passWord + ", email=" + email + "]";
