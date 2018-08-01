@@ -1,6 +1,7 @@
 package service;
 
 import dao.UserDao;
+
 import entity.User;
 
 public class UserService {
@@ -15,6 +16,11 @@ public class UserService {
 	}
 	//根据用户名查询用户名与密码
 	public User queryUserByNameAndPassWord(String userName) {
-		return dao.queryUserByNameAndPassWord(userName);
+
+		return dao.queryUserByName(userName);
+	}
+	//根据用户名更新用户信息
+	public boolean UpdateUserByName(User user){
+		return dao.UpdateUserByName(user);
 	}
 }

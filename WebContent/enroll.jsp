@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-<title>清真味食品</title>
+<title>清真味食品-注册</title>
 
 <link href="css/sanbaosx.css" rel="stylesheet" type="text/css">
 

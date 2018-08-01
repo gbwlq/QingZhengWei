@@ -38,7 +38,7 @@ public class EnRollServlet extends HttpServlet {
 		User user = new User(userName, passWord, email);
 		boolean flag2=service.addUser(user);//增加成功为true
 		if(checkcode.equals(piccode)&&flag == false&&flag2 == true) {
-			//满足 ：验证码正确，用户不存在，增加成功
+			//满足条件 ：验证码正确且用户不存在且增加成功
 			request.setAttribute("user", user);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}else {

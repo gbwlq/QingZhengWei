@@ -101,7 +101,7 @@
 							name="password" id="password" type="password" class="login-input">
 					</div>
 					<p class="hui_login_pp">
-						<a href="">忘记登录密码？</a>
+						<a href="forgetPassword1.jsp">忘记登录密码？</a>
 					</p>
 					<div class="hui_login_boot">
 						<input name="submit" type="submit" class="hui_login_boot01"
