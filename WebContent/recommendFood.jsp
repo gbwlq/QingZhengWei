@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>主页</title>
+<title>美食推荐</title>
 <style type="text/css">
 	.head{
 		background-color:#00ff7f;
@@ -12,6 +12,14 @@
 	}
 	.head a{
 		color: black;
+	}
+	.content{
+		background-color: ;
+		float:left;
+		height: 200px;
+	}
+	.content a{
+		align-content: center;	
 	}
 </style>
 </head>
@@ -21,9 +29,7 @@
 	<a href="enroll.jsp">注册</a>
 </div>
 <div class="content">
-	<form action="#" method="post">
-			
-	</form>
+	<a href="http://www.qzspwang.cn/">清真食品网</a>
 </div>
 </body>
 </html>

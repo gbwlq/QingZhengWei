@@ -163,7 +163,7 @@
 								<dt>
 									<em>验证码:</em> 
 									<input type="text" id="seccode" name="seccode" class="infoInput" size="20"> 
-										<label> 
+									<label> 
 										<img alt="验证码" id="imagecode" src="<%=path%>/ImageServlet" style="cursor: pointer;" align="absmiddle"/> 
 										<a href="javascript: reloadCode();">看不清楚</a><br>
 									</label>
